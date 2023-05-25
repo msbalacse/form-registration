@@ -1,0 +1,55 @@
+import React from "react";
+import { useForm } from "react-hook-form";
+
+export default function App() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => console.log(data);
+  console.log(errors);
+
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <input
+        type="text"
+        placeholder="Name"
+        {...register("Name", { maxLength: 10 })}
+      />
+      {/* <input type="password" placeholder="Password" {...register("Password", {min: 8, pattern: "//^[a-zA-Z0-9!@#\$%\^\&*_=+-]{8,12}$/g/i})" } /> */}
+      <input
+        type="number"
+        placeholder="Age"
+        {...register("Age", { max: 99, min: 18 })}
+      />
+      <select {...register("Gender", { required: true })}>
+        <option value="Male">Male</option>
+      </select>
+      <input
+        type="email"
+        placeholder="Email"
+        {...register("Email", { required: true })}
+      />
+      <input
+        type="tel"
+        placeholder="Phone"
+        {...register("Phone", { required: true })}
+      />
+      <input
+        type="range"
+        placeholder="Rating"
+        {...register("Rating", { required: true, max: 5, min: 1 })}
+      />
+      <input
+        type="checkbox"
+        placeholder="Skills"
+        {...register("Skills", { required: true })}
+      />
+      <input type="url" placeholder="Reference" {...register("Reference")} />
+      <textarea {...register("Summary", { required: true, maxLength: 198 })} />
+
+      <input type="submit" />
+    </form>
+  );
+}

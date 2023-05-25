@@ -1,0 +1,16 @@
+@tailwind components;
+
+@layer components {
+  .main {
+    @apply h-screen grid grid-cols-3;
+  }
+  .left {
+    @apply bg-white text-black flex flex-col justify-center items-center;
+  }
+  .img > img {
+    @apply w-[180px];
+  }
+  .logo {
+    @apply font-extrabold text-4xl text-black tracking-widest;
+  }
+}

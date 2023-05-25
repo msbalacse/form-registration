@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .form__wrapper {
+    @apply p-4 pt-16 col-span-2 overflow-scroll;
+    /* bg-gradient-to-br from-green-400 to-green-700 */
+  }
+
+  .input__wrapper {
+    @apply flex flex-col;
+  }
+
+  .input__wrapper > label {
+    @apply text-lg font-medium mt-4;
+  }
+
+  .input__wrapper .radio > input {
+    @apply ml-4 accent-green-600;
+  }
+
+  .input__wrapper > input,
+  textarea {
+    @apply w-[450px] border-b border-green-600 focus:outline-none p-1 mb-2;
+  }
+  .input__wrapper > textarea {
+    @apply border border-green-600 focus:outline-none p-1 h-[200px];
+  }
+  .input__wrapper > select {
+    @apply w-[150px] p-2 rounded-md bg-green-600 text-white outline-none;
+  }
+
+  /* react phone number package css */
+
+  .PhoneInput {
+    @apply mt-4 h-8 flex items-center align-middle content-center flex-row gap-4;
+  }
+  .PhoneInput > input {
+    @apply w-[200px] border-b border-green-600 focus:outline-none p-1;
+  }
+  .PhoneInput > .PhoneInputCountry {
+    @apply flex align-middle items-center justify-center gap-4;
+  }
+  .PhoneInput > .PhoneInputCountry > select {
+    @apply w-[130px] p-2 rounded-md bg-green-600 text-white outline-none inline;
+  }
+  .PhoneInput > .PhoneInputCountry > .PhoneInputCountryIcon {
+    @apply w-[30px] inline-block;
+  }
+
+  /* react phone number package css */
+
+  .input__wrapper > .check__box {
+    @apply flex flex-row gap-2 mt-2;
+  }
+  .input__wrapper > .check__box > input {
+    @apply accent-green-600;
+  }
+
+  .terms {
+    @apply flex gap-2 mt-4 accent-green-600;
+  }
+
+  .btn {
+    @apply cursor-pointer bg-indigo-900 text-white w-[6rem] border-none px-4 py-4 my-4;
+  }
+}
